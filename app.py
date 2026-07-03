@@ -12,8 +12,10 @@ import os
 import time
 import uuid
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Cola en memoria simple. Para este volumen de uso (un local chico) alcanza,
 # no hace falta una base de datos.
